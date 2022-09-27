@@ -11,7 +11,7 @@ unsigned long clave = 0xF49DC57D;
 unsigned long token;
 unsigned long tp=30000;
 
-main()
+int main()
 {
 	printf("Pulse enter para sincronizar... ");
 	getchar(); //lee enter para sincronizar la fotoresistencia del stm32
@@ -22,8 +22,10 @@ main()
 		gettimeofday(&stop,NULL);
 		tiempo=((stop.tv_sec - start.tv_sec)*1000000+stop.tv_usec-start.tv_usec);
 		tiempo/=1000.0;
+		printf("TIEMPO %i\n",tiempo);
 		if(tiempo>=tp){ //si el tiempo es mayor a 30000ms tp cambia su rango
             tp=tp+30000;
+            printf("TP ES %i\n",tp);
 		}else{
 		    scanf("%lX",&ingreso);
 		}
