@@ -21,7 +21,7 @@ int main (int argc, char** argv){
 
         scanf("%d",&op);                                                    //Se lee la opcion elegida por el usuario
 
-        in = fopen("DEKU.bmp", "rb");                                       // se abre una la imagen de entrada
+        in = fopen("hola.bmp", "rb");                                       // se abre una la imagen de entrada
         fseek(in,2,SEEK_SET);                                               // Se dirige la posicion 2 de la imagen
         fread(&size,sizeof(unsigned char),4,in);                            //Lee los siguientes 4 bytes desde la posicion actual y los guarda en size,
                                                                             //que tiene un tamaño de unsigned char
